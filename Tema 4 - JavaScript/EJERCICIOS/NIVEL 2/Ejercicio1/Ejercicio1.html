@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Juego de adivinar el numero</h1>
+    <h2>Tienes 5 intentos para adivinarlo.</h2>
+    <input id="numeroJugador" type="number" placeholder="Escribe un número">
+    <button id="boton" onclick="comprobar()">Probar</button>
+    <p id="solucion"></p>
+
+    <script>
+        let intentos = 4;
+        var numeroMaquina = Math.random() * 100 + 1;
+        numeroMaquina = Math.trunc(numeroMaquina);
+
+        function comprobar() {
+            console.log("Numero intentos: " + intentos); 
+            console.log("Numero máquina: " + numeroMaquina)       
+
+            let numeroJugador = Number(document.getElementById("numeroJugador").value);
+
+            if (intentos > 0) {
+                if (numeroJugador > numeroMaquina) {
+                    document.getElementById("solucion").innerHTML = ("El número es mas bajo");
+                    intentos--;
+                }
+
+                else if (numeroJugador < numeroMaquina) {
+                    document.getElementById("solucion").innerHTML = ("El número es mas alto");
+                    intentos--;
+                }
+
+                else if (numeroJugador !== numeroMaquina) {
+                    document.getElementById("solucion").innerHTML = ("Debes introducir un numero valido");
+                }
+
+                else if (numeroJugador == numeroMaquina) {
+                    document.getElementById("solucion").innerHTML = ("Acertaste el numero");
+                    document.getElementById("boton").disabled = true;
+                }
+
+            } else {
+                document.getElementById("solucion").innerHTML = ("No te quedan mas intentos");
+                document.getElementById("boton").disabled = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
