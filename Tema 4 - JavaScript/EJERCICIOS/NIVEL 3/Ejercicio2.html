@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function crearNumeros() {
+            var numerosAleatorios = [];
+            for(let i = 0; i < 10; i++) {
+                let numero = Number(Math.random() * 100);
+                numero = Math.trunc(numero);
+                numerosAleatorios.push(numero);
+            }
+
+            numerosAleatorios.sort();
+
+            return numerosAleatorios;
+        }
+        console.log(crearNumeros());
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function operaciones() {
+        
+            if(arguments.length < 4) {
+                return alert("No hay 4 argumentos.")
+            }
+
+            let sumatorio = 0;
+
+            for(let i = 0; i < arguments.length; i++) {
+                sumatorio += arguments[i];
+            }
+
+            let aritmetica = sumatorio / arguments.length;
+
+            let array = Array.from(arguments);
+            console.log(array)
+
+            let multiplicacion = array[0] * array[array.length - 1];
+
+            let division = array[1] / array[array.length - 2];
+
+            console.log(" SUMATORIO: "+ sumatorio + "\n",
+                        "ARITMÉTICA: " + aritmetica + "\n",
+                        "MULTIPLICACION: " + multiplicacion + "\n",
+                        "DIVISION: " + division
+            );  
+        }
+
+        operaciones(1,1,1,4,5);
+        
+    </script>
+</body>
+</html>

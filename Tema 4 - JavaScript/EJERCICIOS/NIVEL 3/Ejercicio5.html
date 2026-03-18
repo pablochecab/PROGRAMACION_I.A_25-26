@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compararPalabras(palabra1, palabra2) {
+            
+            let set1 = new Set(palabra1.toLowerCase());
+            let set2 = new Set(palabra2.toLowerCase());
+
+            console.log(set1);
+            console.log(set2);
+
+            for(let letra of set1) {
+                if(set2.has(letra)) {
+                    return true;
+                } 
+            }
+
+            return false;
+
+        }
+        console.log(compararPalabras("Hola", "Adios"));
+    </script>
+</body>
+</html>
